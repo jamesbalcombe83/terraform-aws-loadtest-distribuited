@@ -16,4 +16,7 @@ mkdir -p ~/.ssh
 echo 'Host *' > ~/.ssh/config
 echo 'StrictHostKeyChecking no' >> ~/.ssh/config
 
+sudo pip3 install "urllib3<2.0"
+sudo pip3 install locust_plugins
+
 touch /tmp/finished-setup
