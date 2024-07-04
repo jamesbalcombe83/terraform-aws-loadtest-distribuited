@@ -16,6 +16,9 @@ mkdir -p ~/.ssh
 echo 'Host *' > ~/.ssh/config
 echo 'StrictHostKeyChecking no' >> ~/.ssh/config
 
+sudo pip3 install "urllib3<2.0"
+sudo pip3 install locust_plugins
+
 sudo iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
 sudo iptables -A INPUT -i eth0 -p tcp --dport 8080 -j ACCEPT
 sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
