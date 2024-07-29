@@ -30,7 +30,7 @@ sudo rpm -ivh logstash-oss-7.1.0.rpm
 # APACHE
 sudo systemctl enable httpd
 sudo systemctl start httpd
-sudo chmod -R 777 /var/www/html
+sudo chmod -r 777 /var/www/html
 sudo rm -rf /var/www/html/*
 
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
