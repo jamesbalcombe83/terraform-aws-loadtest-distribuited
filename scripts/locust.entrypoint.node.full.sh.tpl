@@ -6,7 +6,6 @@ sudo dnf remove -y python3-requests
 
 sudo pip3 install requests
 
-
 # LOCUST
 export LOCUST_VERSION="2.29.0"
 sudo pip3 install locust==$LOCUST_VERSION --log pip_install.log
