@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo yum update -y
-sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash java-11-amazon-corretto htop k6
+sudo dnf update -y
+sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash java-11-amazon-corretto htop k6
 
 #ELK
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch

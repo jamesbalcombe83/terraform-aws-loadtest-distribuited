@@ -1,12 +1,12 @@
 #!/bin/bash
 
-sudo yum update -y
-sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash java-11-amazon-corretto htop httpd k6
+sudo dnf update -y
+sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash java-11-amazon-corretto htop httpd k6
 
 # APACHE
 sudo systemctl enable httpd
 sudo systemctl start httpd
-sudo chmod -r 777 /var/www/html
+sudo chmod -R 777 /var/www/html
 sudo rm -rf /var/www/html/*
 
 # TAURUS
@@ -35,17 +35,17 @@ sudo tar -xzf /tmp/apache-jmeter-$JMETER_VERSION.tgz -C /opt
 
 # ADD JMETER UM PATH
 export PATH="$PATH:$JMETER_BIN"
-echo "PATH=$PATH" >> /etc/environment
+echo "PATH=$PATH" | sudo tee -a /etc/environment
 
 sudo echo "#!/bin/bash" > /etc/profile.d/script.sh
 sudo echo "export PATH=\"\$PATH:\$JMETER_BIN\"" >> /etc/profile.d/script.sh
 sudo chmod +x /etc/profile.d/script.sh
 
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
-echo "PRIVATE_IP=$PRIVATE_IP" >> /etc/environment
+echo "PATH=$PATH" | sudo tee -a /etc/environment
 
 export JVM_ARGS="${JVM_ARGS}  "
-echo "JVM_ARGS=${JVM_ARGS}  " >> /etc/environment
+echo "JVM_ARGS=${JVM_ARGS}  " | sudo tee -a /etc/environment
 
 # INSTALL PLUGINS
 sudo curl -L --silent https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.6/jmeter-plugins-cmn-jmeter-0.6.jar -o $JMETER_PLUGINS_FOLDER/jmeter-plugins-cmn-jmeter-0.6.jar

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sudo curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o /etc/yum.repos.d/opendistroforelasticsearch-artifacts.repo
+sudo curl https://d3g5vo6xdbdb9a.cloudfront.net/dnf/opendistroforelasticsearch-artifacts.repo -o /etc/dnf.repos.d/opendistroforelasticsearch-artifacts.repo
 
-sudo yum update -y
-sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl wget unzip bash java-11-amazon-corretto htop httpd k6
+sudo dnf update -y
+sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl wget unzip bash java-11-amazon-corretto htop httpd k6
 
-sudo yum install opendistroforelasticsearch-1.13.2
+sudo dnf install opendistroforelasticsearch-1.13.2
 sudo systemctl start elasticsearch.service
 curl -XGET https://localhost:9200 -u 'admin:admin' --insecure
 curl -XGET https://localhost:9200/_cat/nodes?v -u 'admin:admin' --insecure
@@ -30,7 +30,7 @@ sudo rpm -ivh logstash-oss-7.1.0.rpm
 # APACHE
 sudo systemctl enable httpd
 sudo systemctl start httpd
-sudo chmod -r 777 /var/www/html
+sudo chmod -R 777 /var/www/html
 sudo rm -rf /var/www/html/*
 
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
