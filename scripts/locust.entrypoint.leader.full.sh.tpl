@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo dnf update -y
-sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash htop pip
+sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash htop python3-pip
 
 # LOCUST
 export LOCUST_VERSION="2.29.0"

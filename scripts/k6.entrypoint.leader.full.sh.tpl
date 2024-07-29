@@ -3,7 +3,7 @@
 sudo curl https://d3g5vo6xdbdb9a.cloudfront.net/dnf/opendistroforelasticsearch-artifacts.repo -o /etc/dnf.repos.d/opendistroforelasticsearch-artifacts.repo
 
 sudo dnf update -y
-sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl wget unzip bash java-11-amazon-corretto htop httpd k6 pip
+sudo dnf install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl wget unzip bash java-11-amazon-corretto htop httpd k6 python3-pip
 
 sudo dnf install opendistroforelasticsearch-1.13.2
 sudo systemctl start elasticsearch.service
