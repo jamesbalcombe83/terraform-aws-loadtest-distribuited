@@ -11,11 +11,11 @@ sudo rm -rf /var/www/html/*
 
 # TAURUS
 export BZT_VERSION="1.16.0"
-sudo pip3 install bzt==$BZT_VERSION
+sudo pip3 install bzt==$BZT_VERSION --log pip_install.log
 
 # LOCUST
 export LOCUST_VERSION="2.29.0"
-sudo pip3 install locust==$LOCUST_VERSION
+sudo pip3 install locust==$LOCUST_VERSION --log pip_install.log
 
 # JMETER
 export MIRROR_HOST=https://archive.apache.org/dist/jmeter
