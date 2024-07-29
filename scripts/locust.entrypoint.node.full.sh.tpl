@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo dnf update -y
-sudo dnf install -y --allowerasing pcre2-devel.x86_64 python gcc python3-devel tzdata unzip bash htop python3-pip
+sudo dnf install -y --allowerasing pcre2-devel.x86_64 python gcc python3.11-devel tzdata unzip bash htop python3.11-pip
 sudo dnf remove -y python3-requests
 
 sudo pip3 install requests
