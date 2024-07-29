@@ -14,7 +14,6 @@ sudo alternatives --install /usr/bin/pip3 pip3 /usr/bin/pip3.9 1
 sudo alternatives --install /usr/bin/pip3 pip3 /usr/bin/pip3.11 2
 echo "2" | sudo alternatives --config pip3
 
-
 sudo pip3 install requests
 
 # LOCUST
